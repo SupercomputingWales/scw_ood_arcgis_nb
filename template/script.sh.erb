@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# Benchmark info
+echo "TIMING - Starting main script at: $(date)"
+
+# Set working directory to home directory
+cd "${HOME}"
+
+#
+# Start Jupyter Notebook Server
+#
+
+# Purge the module environment to avoid conflicts
+module purge
+
+# Clear environment completely
+export PATH="/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin"
+
+# Load module
+module load arcgis-python-api-notebook
+
+# List loaded modules
+module list
+
+# Benchmark info
+echo "TIMING - Starting ArcGIS Notebook at: $(date)"
+
+# Launch the ArcGIS Notebook Server
+set -x
+export NOTEBOOK_ARGS="--config=${CONFIG_FILE}"
+arcgis_nb

@@ -1,0 +1,7 @@
+---
+name: ArcGIS API for Python
+category: Interactive Apps
+subcategory: Servers
+role: batch_connect
+description: |
+  This app will launch a ArcGIS API for Python Notebook/Lab server on one or more nodes.
